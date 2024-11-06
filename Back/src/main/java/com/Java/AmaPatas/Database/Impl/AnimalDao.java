@@ -37,7 +37,7 @@ public class AnimalDao implements IDao<Animal> {
 
     @Override
     public List<Animal> find(String filter) {
-        return List.of();
+        return repository.findAllByNomeContainingOrIdadeEqualsOrGeneroContainingOrRacaContainingOrPorteContaining(filter);
     }
 
     @Override

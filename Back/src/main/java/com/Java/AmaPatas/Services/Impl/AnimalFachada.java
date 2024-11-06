@@ -35,7 +35,7 @@ public class AnimalFachada implements IFachada<Animal> {
 
     @Override
     public List<Animal> find(String filter) {
-        return List.of();
+        return dao.find(filter);
     }
 
     @Override
