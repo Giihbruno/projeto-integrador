@@ -37,7 +37,7 @@ public class DoadorDao implements IDao<Doador> {
 
     @Override
     public List<Doador> find(String filter) {
-        return List.of();
+        return repository.findAllByNomeContainingOrEnderecoContainingOrTelefoneContainingOrCpfContaining(filter);
     }
 
     @Override

@@ -35,7 +35,7 @@ public class DoadorFachada implements IFachada<Doador> {
 
     @Override
     public List<Doador> find(String filter) {
-        return List.of();
+        return dao.find(filter);
     }
 
     @Override

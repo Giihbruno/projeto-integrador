@@ -60,8 +60,13 @@ public class DoadorController implements IController<Doador> {
     }
 
     @Override
-    public ResponseEntity<?> find(String filter) {
-        return null;
+    @GetMapping(value = "/find")
+    public ResponseEntity<?> find(@RequestParam String filter) {
+        try {
+            return new ResponseEntity<>(fachada.find(filter), HttpStatus.OK);
+        }catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @Override
