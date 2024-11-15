@@ -1,3 +1,5 @@
+"use client"
+
 // components/ApadrinhamentoSection.tsx
 import React from 'react';
 
