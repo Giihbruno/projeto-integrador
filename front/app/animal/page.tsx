@@ -17,7 +17,7 @@ export default function Page() {
     }
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [fetchData]);
 
     return (
         <div className="bg-custom-fundo min-h-screen flex flex-col items-center py-10">

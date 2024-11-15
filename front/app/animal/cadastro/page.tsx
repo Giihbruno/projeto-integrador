@@ -8,6 +8,8 @@ import { useRouter } from 'next/navigation';
 
 
 
+
+
 export default function CadastroAnimal() {
   const [animal, setAnimal] = useState<Animal>(new Animal({ doador: new Doador({}) }));
   const [doadores, setDoadores] = useState<Doador[]>([]);
@@ -15,7 +17,6 @@ export default function CadastroAnimal() {
   const doadorService = new DoadorService();
   const router = useRouter();
 
-  const [isClient, setIsClient] = useState(false); // Estado para controlar se é cliente
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -48,18 +49,18 @@ export default function CadastroAnimal() {
 
   useEffect(() => {
     fetchDoadores(); // Apenas após a hidratação do cliente
-  }, []);
+  }, [fetchDoadores]);
 
 
   
   return (
       <section className="bg-custom-fundo min-h-screen flex flex-col items-center py-20">
         <div className="flex items-center justify-around w-full max-w-4xl space-x-4 mb-10">
-          <img src="/paw-solid.svg" alt="pata cachorro" className="w-9 h-9" />
+          <img src="/paw-solid.svg" alt="pata cachorro" className="w-9 h-9"></img>
           <h2 className="text-4xl font-bold text-center">
             Cadastre um <span className="text-red-500">novo amigo!</span>
           </h2>
-          <img src="/paw-solid.svg" alt="pata cachorro" className="w-9 h-9" />
+          <img src="/paw-solid.svg" alt="pata cachorro" className="w-9 h-9"></img>
         </div>
 
         <form onSubmit={handleSubmit} className="w-full max-w-lg p-6 bg-pink-100 rounded-lg border-2 border-dashed border-pink-300 shadow-lg space-y-4">
