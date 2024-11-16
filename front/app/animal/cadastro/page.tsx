@@ -48,6 +48,14 @@ export default function CadastroAnimal() {
   };
 
   useEffect(() => {
+    const fetchDoadores = async () => {
+      try {
+        const response = await doadorService.findAll();
+        setDoadores(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar doadores:", error);
+      }
+    };
     fetchDoadores(); // Apenas após a hidratação do cliente
   }, [fetchDoadores]);
 

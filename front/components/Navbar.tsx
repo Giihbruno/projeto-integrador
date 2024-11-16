@@ -36,7 +36,7 @@ export default function Navbar(){
               <Link href="/animal/cadastro" className="text-lg font-semibold uppercase transition duration-300 hover:bg-[#fcb1b1]">
                 Seja Parceiro!
               </Link>
-              <Link href="/apadrinhar" className="text-lg font-semibold uppercase transition duration-300 hover:bg-[#fcb1b1]">
+              <Link href="/Apadrinhar" className="text-lg font-semibold uppercase transition duration-300 hover:bg-[#fcb1b1]">
                 Quero Apadrinhar
               </Link>
             </div>
